@@ -10,12 +10,12 @@ body {
   text-align: left;
 }
 
-@media  (max-width: 320px) {
+@media (max-width: 320px) {
   body {
     font-size: 24px;
   }
 }
-@media  (max-width: 820px) {
+@media (max-width: 820px) {
   body {
     font-size: 20px;
   }
@@ -45,7 +45,17 @@ body {
 }
 
 .bayan-input:checked ~ .bayan-picture {
-  display: block;
+  /* display: block; */
+  visibility: visible;
+  transform: scale(1);
+  height: 341px;
+}
+
+.bayan-input:not(:checked) ~ .bayan-picture {
+  /* display: block; */
+  visibility: visible;
+  transform: scale(0); 
+  height: 0px;
 }
 
 .bayan-title {
@@ -62,18 +72,20 @@ body {
   border-bottom: 1px solid grey;
 }
 
+
 .bayan-picture {
   opacity: 1;
   cursor: pointer;
   text-align: center;
   padding: 15px;
-  display: none;
-  animation: opacity 2s linear;
+  /* display: none; */
+  visibility: hidden;
+  transition: 0.5s;
 }
 
 .bayan-picture:active {
   opacity: 0.5;
-  animation: opacity 2s linear;
+  transform: scale(2.5);
 }
 
 .bayan .icon {
